@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VINN OCEAN AI</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;padding:20px;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(160deg,#0879c9,#04c9d5);
+  color:white;min-height:100vh
+}
+.container{
+  max-width:430px;margin:35px auto;
+  background:#075b9e;
+  padding:22px;border-radius:22px;
+  box-shadow:0 8px 25px #003b6680
+}
+h1{text-align:center;margin:5px}
+.sub{text-align:center;color:#bcefff}
+.panel{
+  background:#0879b9;padding:16px;
+  border-radius:15px;margin-top:18px
+}
+label{display:block;margin:14px 0 7px}
+select,input,button{
+  width:100%;padding:13px;
+  border:0;border-radius:10px;
+  font-size:16px
+}
+button{
+  background:#ffca24;color:#633600;
+  font-weight:bold;margin-top:18px
+}
+#result{
+  background:#e1faff;color:#07517c;
+  padding:15px;border-radius:12px;
+  margin-top:18px;display:none
+}
+.footer{text-align:center;font-size:12px;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🐳 VINN OCEAN AI</h1>
+  <p class="sub">Ocean Merge Assistant</p>
+
+  <div class="panel">
+    <h3>🤖 AI Merge Assistant</h3>
+    <label>Hewan yang sedang muncul</label>
+    <input id="animal" placeholder="Contoh: Bintang laut">
+
+    <label>Di mana ada hewan sejenis?</label>
+    <select id="position">
+      <option value="none">Belum terlihat</option>
+      <option value="kiri">Kiri</option>
+      <option value="tengah">Tengah</option>
+      <option value="kanan">Kanan</option>
+    </select>
+
+    <button onclick="analyze()">ANALISIS POSISI</button>
+
+    <div id="result"></div>
+  </div>
+
+  <div class="panel">
+    <h3>🌊 Status VINN OCEAN AI</h3>
+    <p>Mode: Asisten strategi</p>
+    <p>Analisis layar: Belum terhubung</p>
+    <p>Kontrol otomatis: Belum tersedia</p>
+  </div>
+
+  <p class="footer">VINN OCEAN AI © 2026</p>
+</div>
+
+<script>
+function analyze(){
+ const animal=document.getElementById("animal").value.trim();
+ const position=document.getElementById("position").value;
+ const result=document.getElementById("result");
+
+ if(!animal){
+   alert("Masukkan nama hewan terlebih dahulu!");
+   return;
+ }
+
+ let advice;
+ if(position==="none"){
+   advice="Cari ruang kosong yang aman. Belum ada pasangan sejenis yang teridentifikasi.";
+ }else{
+   advice="Pertimbangkan menjatuhkan hewan di area "+position+" untuk mendekati pasangan sejenis.";
+ }
+
+ result.style.display="block";
+ result.innerHTML="<b>Hasil analisis VINN OCEAN AI</b><br>"+
+ "Hewan: "+animal+"<br>"+advice+
+ "<br><br>Periksa kondisi wadah sebelum menjatuhkan hewan.";
+}
+</script>
+</body>
+  </html>
+  
